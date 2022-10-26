@@ -1,9 +1,9 @@
 <%= form_for @cartitem, url: {action: :create} do |f| %>
     <p>
-        商品名：<%= Product.find(@cartitem.product_id).name %>
+        <%= f.label ::product_id, '商品名称' %>：<%= Product.find(@cartitem.product_id).name %>
     </p>
     <p>
-        価格：<%= Product.find(@cartitem.product_id).price %>円
+        <%= f.label :price, '商品価格' %> ：<%= Product.find(@cartitem.product_id).price %>円
     </p>
     <p>
         <%= f.label :qty, '数値' %>
