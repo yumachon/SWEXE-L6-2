@@ -1,1 +1,14 @@
-<%= @product.name %>
+<% @cart.cartitems.each do |cartitem| %>
+    <div>
+        <%= cartitem.product.name %>
+        <%= cartitem.qty %>個
+        <%= link_to 'カートから削除', cartitem_path(cartitem.id), method: :delete %>
+    </div>
+<% end %>
+
+<p> 
+合計金額: <%= @total %>円
+</p>
+<p>
+<%= link_to '商品一覧に戻る', products_path %>
+</p>

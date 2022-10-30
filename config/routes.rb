@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-    get 'top/main'
-    #get 'cartitem/new'
-    resources :products
-    root 'top#main'
-    resources :cartitems, only: [:new, :create, :destroy]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'products#index'
+  #root 'top#main'
+  #get 'top/main'
+  resources :products
+  resources :cartitems, only: [:new, :create, :destroy]
+  resources :carts, only: [:show]
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
